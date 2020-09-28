@@ -21,5 +21,6 @@ apt-get autoremove -y && \
 wget -o - https://www.hls-proxy.com/downloads/7.1.0/hls-proxy-7.1.0.linux-x64.zip -O hlsproxy.zip && \
 unzip hlsproxy.zip -d /opt/hlsp/ && \
 
-RUN chmod +x /opt/hlsp/hls-proxy
+chmod +x /opt/hlsp/hls-proxy
+
 CMD ["/opt/hlsp/hls-proxy"]
