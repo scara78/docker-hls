@@ -7,9 +7,9 @@ WORKDIR /tmp
 EXPOSE 80
 
 RUN \
+apt-get update && apt-get upgrade -y && \
 apt-get install -y \
 wget \
-mc \
 nano \
 tzdata && \
 ln -fs /usr/share/zoneinfo/Europe/London /etc/localtime && \
