@@ -7,7 +7,6 @@ WORKDIR /tmp
 EXPOSE 80
 
 RUN \
-apt-get update && apt-get upgrade -y && \
 apt-get install -y \
 wget \
 mc \
@@ -21,9 +20,5 @@ apt-get autoremove -y && \
 wget -o - https://www.hls-proxy.com/downloads/7.1.0/hls-proxy-7.1.0.linux-x64.zip -O hlsproxy.zip && \
 unzip hlsproxy.zip -d /opt/hlsp/ && \
 
-apt-get clean && \
-rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-
-COPY root/ /
 RUN chmod +x /opt/hlsp/hls-proxy
 CMD ["/opt/hlsp/hls-proxy"]
