@@ -9,6 +9,7 @@ EXPOSE 80
 RUN \
 apt-get update && apt-get upgrade -y && \
 apt-get install -y \
+unzip \
 wget \
 nano \
 tzdata && \
