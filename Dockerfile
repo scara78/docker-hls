@@ -18,7 +18,7 @@ dpkg-reconfigure --frontend noninteractive tzdata && \
 apt-get autoremove -y && \
 
 
-wget -o - https://www.hls-proxy.com/downloads/7.1.0/hls-proxy-7.1.0.linux-x64.zip -O hlsproxy.zip && \
+wget -o - https://www.hls-proxy.com/downloads/8.4.8/hls-proxy-8.4.8.linux-x64.zip -O hlsproxy.zip && \
 unzip hlsproxy.zip -d /opt/hlsp/ && \
 
 chmod +x /opt/hlsp/hls-proxy
