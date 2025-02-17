@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-EXPOSE 80
+EXPOSE 8090
 
 WORKDIR /work
 
@@ -14,7 +14,7 @@ RUN apk update && apk add --no-cache unzip curl iproute2 jq ffmpeg && \
 
 # Timezone
 RUN apk update && apk add tzdata
-ARG TZ "Europe/London"
+ARG TZ "Europe/Bucharest"
 ENV TZ=$TZ
 RUN cp /usr/share/zoneinfo/Europe/London /etc/localtime
 
@@ -27,10 +27,10 @@ RUN chmod 0644 /etc/cron.d/cron
 # Install HLS Proxy
 ARG version=8.4.8
 
-RUN curl -O https://www.hls-proxy.com/downloads/$version/hls-proxy-$version.linux-x64.zip && \
-    unzip hls-proxy-$version.linux-x64.zip
+RUN curl -O https://www.hls-proxy.com/downloads/8.4.8/hls-proxy-8.4.8.macos-arm64.zip && \
+    unzip hls-proxy-8.4.8.macos-arm64.zip
 
-RUN rm hls-proxy-$version.linux-x64.zip
+RUN rm hls-proxy-8.4.8.macos-arm64.zip
 
 # Give execution rights
 RUN chmod a+x hls-proxy
