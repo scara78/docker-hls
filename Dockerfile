@@ -16,7 +16,7 @@ RUN apk update && apk add --no-cache unzip curl iproute2 jq ffmpeg && \
 RUN apk update && apk add tzdata
 ARG TZ "Europe/Bucharest"
 ENV TZ=$TZ
-RUN cp /usr/share/zoneinfo/Europe/London /etc/localtime
+RUN cp /usr/share/zoneinfo/Europe/Bucharest /etc/localtime
 
 # Add crontab file to the cron directory
 ADD crontab /etc/cron.d/cron
